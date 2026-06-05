@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Upload, ImageIcon } from "lucide-react";
+import NextImage from "next/image";
 
 interface Props {
   onClose: () => void;
@@ -126,12 +127,22 @@ export default function PhotoFlyerModal({ onClose }: Props) {
 
                 {/* Photo or placeholder */}
                 {photo ? (
-                  <img
-                    src={photo}
-                    alt="المرحوم"
-                    className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-full object-cover"
-                    style={{ border: "2px solid rgba(201,168,76,0.4)" }}
-                  />
+                  {photo.startsWith("data:") ? (
+                    <img
+                      src={photo}
+                      alt="المرحوم"
+                      className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-full object-cover"
+                      style={{ border: "2px solid rgba(201,168,76,0.4)" }}
+                    />
+                  ) : (
+                    <NextImage
+                      src={photo}
+                      alt="المرحوم"
+                      fill
+                      className="rounded-full object-cover"
+                      style={{ inset: "8px", width: "calc(100% - 16px)", height: "calc(100% - 16px)", border: "2px solid rgba(201,168,76,0.4)" }}
+                    />
+                  )}
                 ) : (
                   <div
                     className="absolute inset-2 rounded-full flex flex-col items-center justify-center gap-2 cursor-pointer transition-all"
@@ -200,7 +211,7 @@ export default function PhotoFlyerModal({ onClose }: Props) {
                 className="text-3xl md:text-4xl font-bold mb-2 leading-relaxed"
                 style={{ color: "var(--gold-light)", fontFamily: "'Scheherazade New', serif" }}
               >
-                الحاجه فوقيه فؤاد احمد الحصين
+                الحاجة / فوقية أحمد فؤاد الحصين
               </h2>
 
               {/* Date of birth / death */}
@@ -226,9 +237,9 @@ export default function PhotoFlyerModal({ onClose }: Props) {
                   className="text-xl leading-loose"
                   style={{ color: "rgba(201,168,76,0.9)", fontFamily: "'Scheherazade New', serif" }}
                 >
-                  ﴿ وَلَا تَحْسَبَنَّ الَّذِينَ قُتِلُوا فِي سَبِيلِ اللَّهِ أَمْوَاتًا
+                  ﴿ كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ
                   <br />
-                  بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ ﴾
+                  وَإِنَّا إِلَيْهِ رَاجِعُونَ ﴾
                 </p>
               </div>
 
@@ -237,9 +248,9 @@ export default function PhotoFlyerModal({ onClose }: Props) {
                 className="text-lg leading-loose mb-2"
                 style={{ color: "rgba(255,255,255,0.7)", fontFamily: "'Scheherazade New', serif" }}
               >
-                اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ
+                اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا
                 <br />
-                وَأَدْخِلْهُ جَنَّةَ الفِرْدَوْسِ الأَعْلَى
+                وَأَدْخِلْهَا جَنَّةَ الفِرْدَوْسِ الأَعْلَى
               </p>
             </div>
 

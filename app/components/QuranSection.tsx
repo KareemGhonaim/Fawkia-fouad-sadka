@@ -71,7 +71,7 @@ export default function QuranSection() {
           </h2>
           <div className="section-divider my-4" />
           <p className="text-lg" style={{ color: "var(--text-muted)", fontFamily: "'Scheherazade New', serif" }}>
-            اقرأ هذه السور وأهدِ ثوابها لروح المرحوم الحاجة فاطمة محمد عبدالله
+            اقرأ هذه السور وأهدِ ثوابها لروح المرحومة الحاجة/فوقية أحمد فؤاد الحصين
           </p>
         </motion.div>
 

@@ -79,7 +79,7 @@ export default function HeroSection({ onOpenFlyer }: Props) {
               textShadow: "0 4px 20px rgba(0,0,0,0.8)",
             }}
           >
-            الحاجة فاطمة محمد عبدالله
+            الحاجة/فوقية أحمد فؤاد الحصين
           </h1>
 
           <div className="section-divider my-3" />
@@ -131,7 +131,7 @@ export default function HeroSection({ onOpenFlyer }: Props) {
             >
               "كانت نعم الأم والمرأة، تركت في قلوبنا أثراً لا يُمحى،
               وفي حياتنا نوراً لا يُنسى.
-              اللهم اجعلي لها مكاناً في أعلى الجنان."
+              اللهم اجعل لها مكاناً في أعلى الجنان."
             </p>
           </motion.div>
 

@@ -6,22 +6,22 @@ import { Copy, Share2, Check, Heart } from "lucide-react";
 const prayers = [
   {
     id: "p1",
-    text: "اللَّهُمَّ اغْفِرِي لَهَا وَارْحَمِيهَا، وَعَافِهَا وَاعْفُ عَنْهَا، وَأَكْرِمِي نُزُلَهَا، وَوَسِّعِي مُدْخَلَهَا",
+    text: "اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا، وَعَافِهَا وَاعْفُ عَنْهَا، وَأَكْرِمْ نُزُلَهَا، وَوَسِّعْ مُدْخَلَهَا",
     source: "صحيح مسلم",
   },
   {
     id: "p2",
-    text: "اللَّهُمَّ اجْعَلِي قَبْرَهَا رَوْضَةً مِنْ رِيَاضِ الجَنَّةِ، وَلَا تَجْعَلِيهِ حُفْرَةً مِنْ حُفَرِ النِّيرَانِ",
+    text: "اللَّهُمَّ اجْعَلْ قَبْرَهَا رَوْضَةً مِنْ رِيَاضِ الجَنَّةِ، وَلَا تَجْعَلْهُ حُفْرَةً مِنْ حُفَرِ النِّيرَانِ",
     source: "دعاء مأثور",
   },
   {
     id: "p3",
-    text: "اللَّهُمَّ اجْعَلِي أَعْمَالَهَا فِي مِيزَانِ حَسَنَاتِهَا، وَاغْفِرِي لَهَا ذُنُوبَهَا وَخَطَايَاهَا",
+    text: "اللَّهُمَّ اجْعَلْ أَعْمَالَهَا فِي مِيزَانِ حَسَنَاتِهَا، وَاغْفِرْ لَهَا ذُنُوبَهَا وَخَطَايَاهَا",
     source: "دعاء مأثور",
   },
   {
     id: "p4",
-    text: "اللَّهُمَّ أَنِيرِي قَبْرَهَا، وَاجْمَعْنَا بِهَا فِي الفِرْدَوْسِ الأَعْلَى مَعَ النَّبِيِّينَ وَالصِّدِّيقِينَ",
+    text: "اللَّهُمَّ أَنِرْ قَبْرَهَا، وَاجْمَعْنَا بِهَا فِي الفِرْدَوْسِ الأَعْلَى مَعَ النَّبِيِّينَ وَالصِّدِّيقِينَ",
     source: "دعاء مأثور",
   },
 ];
@@ -56,7 +56,7 @@ export default function PrayersSection() {
   const sharePrayer = async (text: string, id: string) => {
     incrementCount(id);
     if (navigator.share) {
-      await navigator.share({ text: text + "\n\n(أُهدي ثواب هذا الدعاء لروح المرحوم الحاجة فاطمة محمد عبدالله)" });
+      await navigator.share({ text: text + "\n\n(أُهدي ثواب هذا الدعاء لروح المرحومة الحاجة/فوقية أحمد فؤاد الحصين)" });
     } else {
       await copyPrayer(text, id);
     }
@@ -74,7 +74,7 @@ export default function PrayersSection() {
         >
           <div className="text-3xl mb-3" style={{ color: "var(--gold)" }}>🤲</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-3" style={{ color: "var(--green-dark)", fontFamily: "'Scheherazade New', serif" }}>
-            أدعية للمرحوم
+            أدعية للمرحومة
           </h2>
           <div className="section-divider my-4" />
           <p className="text-lg" style={{ color: "var(--text-muted)", fontFamily: "'Scheherazade New', serif" }}>
